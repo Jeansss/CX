@@ -1,0 +1,3 @@
+default: -p data
+
+data: ENVIRONMENT=data

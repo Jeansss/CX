@@ -1,0 +1,6 @@
+default: -p bdd -p chrome
+bdd: --format pretty
+json: --format json --out=log/features.json
+chrome: BROWSER=chrome
+chrome_headless: BROWSER=chrome_headless
+
