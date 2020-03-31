@@ -12,3 +12,5 @@ apt-get install -y build-essential
 
 RUN gem instal bundler && \
 bundle
+
+WORKDIR /home/test
