@@ -18,3 +18,5 @@ RUN apt-get install -y unzip
 
 RUN gem instal bundler && \
 bundle
+
+CMD 'bin/bash'
