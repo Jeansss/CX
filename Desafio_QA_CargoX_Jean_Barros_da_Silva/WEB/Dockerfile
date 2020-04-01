@@ -11,4 +11,4 @@ RUN apt-get update && \
 apt-get install -y build-essential
 
 RUN gem install bundler && \
-bundle
+bundle install --path vendor/cache
