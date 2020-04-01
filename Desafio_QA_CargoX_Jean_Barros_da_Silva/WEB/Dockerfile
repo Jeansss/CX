@@ -1,13 +1,12 @@
 FROM ruby:2.5.0-slim
 MAINTAINER Jean
 
-COPY Gemfile /var/www
+COPY Gemfile /home/test
 
-WORKDIR /var/www
+WORKDIR /home/test
 
 RUN apt-get update && \
 apt-get install -y build-essential
 
-RUN gem install bundler
-
-ENTRYPOINT bundle install
+RUN gem install bundler && \
+bundle
