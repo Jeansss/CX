@@ -3,7 +3,7 @@ MAINTAINER Jean
 
 RUN mkdir /home/test
 
-COPY . /home/test
+COPY Gemfile /home/test
 
 WORKDIR /home/test
 
@@ -11,6 +11,4 @@ RUN apt-get update && \
 apt-get install -y build-essential
 
 RUN gem instal bundler && \
-bundle
-
-WORKDIR /home/test
+bundler
