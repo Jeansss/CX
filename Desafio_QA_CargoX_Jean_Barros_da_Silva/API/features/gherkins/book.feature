@@ -1,6 +1,6 @@
 #language:pt
 
-Funcionalidade: Criar book
+Funcionalidade: Criar books
   Eu Como candidato do teste
   Quero realizar a criação, consulta e edição do livro via api
   Para validar o funcionamento da mesma
