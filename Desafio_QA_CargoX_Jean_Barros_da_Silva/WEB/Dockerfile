@@ -13,4 +13,4 @@ COPY . /home/test
 RUN gem install bundler && \
 bundle install
 
-CMD ["cucumber"]
+ENTRYPOINT "bin/bash"
