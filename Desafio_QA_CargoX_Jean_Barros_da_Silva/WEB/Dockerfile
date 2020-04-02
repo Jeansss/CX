@@ -8,9 +8,9 @@ RUN mkdir /home/test
 
 WORKDIR /home/test
 
-USER 0:0
-
-COPY Gemfile /home/test
+COPY . /home/test
 
 RUN gem install bundler && \
 bundle install
+
+CMD ["cucumber"]
