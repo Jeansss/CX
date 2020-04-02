@@ -8,7 +8,7 @@ RUN mkdir /home/test
 
 WORKDIR /home/test
 
-COPY . /home/test
+COPY Gemfile /home/test
 
 RUN gem install bundler && \
 bundle install
