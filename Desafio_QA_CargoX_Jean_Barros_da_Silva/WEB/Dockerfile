@@ -8,11 +8,7 @@ RUN mkdir /home/test
 
 WORKDIR /home/test
 
-USER 1000:1000
-
-# RUN groupadd jenkins -g 1000
-
-# RUN useradd -u 1000 -g 1000 -s /bin/sh jenkins
+USER 0:0
 
 COPY Gemfile /home/test
 
