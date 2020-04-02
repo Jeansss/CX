@@ -8,6 +8,11 @@ RUN mkdir /home/test
 
 WORKDIR /home/test
 
+RUN groupadd jenkins -g 1000
+
+RUN useradd -u 1000 -g 1000 -s /bin/sh jenkins
+
+
 COPY Gemfile /home/test
 
 RUN gem install bundler && \
