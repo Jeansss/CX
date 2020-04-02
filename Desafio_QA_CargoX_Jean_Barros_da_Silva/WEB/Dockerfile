@@ -12,5 +12,3 @@ COPY . /home/test
 
 RUN gem install bundler && \
 bundle install
-
-ENTRYPOINT "bin/bash"
