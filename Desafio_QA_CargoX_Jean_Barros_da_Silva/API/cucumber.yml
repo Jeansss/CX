@@ -2,5 +2,5 @@ default: -p bdd -p data -p json
 
 data: ENVIRONMENT=data
 bdd: --format pretty
-json: --format json --out=log/features.json
+json: --format json --out=./features.json
 
