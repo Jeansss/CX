@@ -14,7 +14,7 @@ end
 
 Então("validar o livro criado") do
   # chamaria o get nessa linha se estivesse funcionando e faria a comparação do meu body com o retorno do get
-  expect(@response_post.code).to be(200)
+  expect(@response_post.code).to be(100)
   expect(@response_post.response.message).to eql('OK')
   expect(@response_post['ID']).not_to be_nil
   expect(@response_post['Title']).to eql(@body[:Title])
