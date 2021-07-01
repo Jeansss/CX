@@ -3,11 +3,12 @@ require 'capybara/cucumber'
 require 'site_prism'
 require 'selenium-webdriver'
 require 'pry'
+require 'report_builder'
+require 'parallel_tests'
 
 @browser = ENV['BROWSER']
 
 MASSA = YAML.load_file(File.dirname(__FILE__) + "/config/data.yml")
-
 
 Capybara.register_driver :selenium do |app|
   if @browser.eql?('chrome_headless')
@@ -27,6 +28,43 @@ Capybara.configure do |config|
     config.default_driver = :selenium
   end
 
-  config.app_host = 'https://demo.suiteondemand.com/'
+  #  store = nil
+
+
+  # Before do |scenario|
+  #   case scenario.tags.last.name
+  #   when '@orderbr'
+  #     store = 'testjeans.nubestaging.com.br'
+  #   when '@orderar'
+  #     store = 'testjeanarr.nubestaging.com'
+  #   when '@ordermx'
+  #     store = 'testjeanmx.nubestaging.com'
+  #   when '@ordercl'
+  #     store = 'testjeancl.nubestaging.com'
+  #   when '@orderco'
+  #     store = 'testjeanco.nubestaging.com'
+  #   else
+  #     store = 'testjeans.nubestaging.com.br'
+  #   end
+  #   config.app_host = "https://#{store}"
+  # end
+
+  # case scenario.tags.last.name
+  # when '@orderbr'
+  #   store = 'jeanprdtest.lojavirtualnuvem.com.br'
+  # when '@orderar'
+  #   store = 'testjeanarr.mitiendanube.com'
+  # when '@ordermx'
+  #   store = 'testjeanmx2.mitiendanube.com'
+  # when '@ordercl'
+  #   store = 'testjeancl.mitiendanube.com'
+  # when '@orderco'
+  #   store = 'testjeanco.mitiendanube.com'
+  # else
+  #   store = 'jeanprdtest.lojavirtualnuvem.com.br'
+  # end
   Capybara.default_max_wait_time = 10
 end
+
+
+
