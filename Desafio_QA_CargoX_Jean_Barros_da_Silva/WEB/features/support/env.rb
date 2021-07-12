@@ -8,7 +8,7 @@ require 'parallel_tests'
 
 @browser = ENV['BROWSER']
 
-MASSA = YAML.load_file(File.dirname(__FILE__) + "/config/data.yml")
+MASSA = YAML.load_file(File.dirname(__FILE__) + "/config/#{ENV['ENV']}.yml")
 
 Capybara.register_driver :selenium do |app|
   if @browser.eql?('chrome_headless')
@@ -27,6 +27,10 @@ Capybara.configure do |config|
   else
     config.default_driver = :selenium
   end
+
+  # binding.pry
+
+  # ENV['ENV'].eql?('production')
 
   #  store = nil
 
@@ -63,6 +67,7 @@ Capybara.configure do |config|
   # else
   #   store = 'jeanprdtest.lojavirtualnuvem.com.br'
   # end
+  
   Capybara.default_max_wait_time = 10
 end
 

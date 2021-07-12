@@ -1,5 +1,9 @@
-default: -p bdd -p chrome --publish-quiet -p json
+default: -p bdd -p chrome --publish-quiet -p json -p stg
 bdd: --format pretty
 json: --format json --out=./features/support/log/features.json
 chrome: BROWSER=chrome
 chrome_headless: BROWSER=chrome_headless -p bdd --publish-quiet -p json
+prd: -p bdd -p chrome --publish-quiet -p json ENV=production
+stg: -p bdd -p chrome --publish-quiet -p json ENV=staging
+prdh: ENV=production -p chrome_headless
+stgh: ENV=staging -p chrome_headless

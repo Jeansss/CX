@@ -1,72 +1,42 @@
 #language: pt 
 @smoke
-Funcionalidade: Fechar Pedido com método de pagamento custom
-  Eu como cliente
-  Quero realizar um pedido de um produto e realizar o pagamento com o método de pagamento custom
-  Para adquirir meu produto
+Funcionalidade: Finalizar Pedido com produto digital
 
-  @order1 @smoke @orderbr
-  Esquema do Cenário: Finalizar Pedido com diferentes meios de entrega - BR
-    Dado que o consumer tenha avançado com um pedido até o checkout com produto "fisico" na loja "<store>"
-    Quando o consumer finalizar um pedido com o meio de entrega "<shipping_option>" e método de pagamento "custom"
+  @order3 @orderbr
+  Cenário: Finalizar Pedido com produto digital - BR
+    Dado que o consumer tenha avançado com um pedido até o checkout com produto "digital" na loja "<store>"
+    Quando o consumer finalizar um pedido com o meio de entrega "<shipping_option>" e método de pagamento "custom" em loja br
     Então validar que o pedido foi finalizado com sucesso
       | shipping_option | <shipping_option> |
       | store           | <store>           |
 
     Exemplos:
-      | store     | shipping_option |
-      | testjeans | sedex           |
-      | testjeans | pac             |
-      | testjeans | pickup          |
+      | store      | shipping_option |
+      | testjeans  | digital          |
 
-  @order_ar1 @smoke @orderar
-  Esquema do Cenário: Finalizar Pedido com diferentes meios de entrega - AR
-    Dado que estou na tela de checkout com um produto "fisico" "<store>"
-    E preencher os dados do formulário ar "<shipping_option>"
-    E selecionar o método de pagamento "custom"
-    Então validar que o pedido foi finalizado com sucesso "<shipping_option>" "<store>"
+  @order_ar3  @orderar
+  Cenário: Finalizar Pedido com produto digital - AR
+    Dado que o consumer tenha avançado com um pedido até o checkout com produto "digital" na loja "<store>"
+    Quando o consumer finalizar um pedido com o meio de entrega "<shipping_option>" e método de pagamento "custom" em loja ar
+    Então validar que o pedido foi finalizado com sucesso
+      | shipping_option | <shipping_option> |
+      | store           | <store>           |
 
     Exemplos:
-      | store       | shipping_option              |
-      | testjeanarr | OCA_estandar_envio_domicílio |
-      | testjeanarr | pickup                       |
-      | testjeanarr | retirar_sucursal_oca         |
+      | store       | shipping_option |
+      | testjeanarr | digital         |
 
-  @order_mx1 @smoke @ordermx
-  Esquema do Cenário: Finalizar Pedido com diferentes meios de entrega - MX
-    Dado que estou na tela de checkout com um produto "fisico" "<store>"
-    E preencher os dados do formulário mx "<shipping_option>"
-    E selecionar o método de pagamento "customMX"
-    Então validar que o pedido foi finalizado com sucesso "<shipping_option>" "<store>"
+  @order_mx3  @ordermx
+  Cenário: Finalizar Pedido com produto digital - MX
+    Dado que o consumer tenha avançado com um pedido até o checkout com produto "digital" na loja "<store>"
+    Quando o consumer finalizar um pedido com o meio de entrega "<shipping_option>" e método de pagamento "custom" em loja mx
+    Então validar que o pedido foi finalizado com sucesso
+      | shipping_option | <shipping_option> |
+      | store           | <store>           |
 
     Exemplos:
       | store      | shipping_option |
-      | testjeanmx | custom          |
-      | testjeanmx | pickup          |
-
-
-  @order3 @smoke @orderbr
-  Cenário: Finalizar Pedido com produto digital - BR
-    Dado que estou na tela de checkout com um produto "digital" "testjeans"
-    E preencher os dados do formulário "digital"
-    E selecionar o método de pagamento "custom"
-    Então validar que o pedido foi finalizado com sucesso "digital" "testjeans"
-
-
-  @order_ar3 @smoke @orderar
-  Cenário: Finalizar Pedido com produto digital - AR
-    Dado que estou na tela de checkout com um produto "digital" "testjeanarr"
-    E preencher os dados do formulário ar "digital"
-    E selecionar o método de pagamento "custom"
-    Então validar que o pedido foi finalizado com sucesso "digital" "testjeanarr"
-
-
-  @order_mx3 @smoke @ordermx
-  Cenário: Finalizar Pedido com produto digital - MX
-    Dado que estou na tela de checkout com um produto "digital" "testjeanmx"
-    E preencher os dados do formulário mx "digital"
-    E selecionar o método de pagamento "custom"
-    Então validar que o pedido foi finalizado com sucesso "digital" "testjeanmx"
+      | testjeanmx | digital         |
 
 
 # @vai @orderbr
@@ -80,25 +50,28 @@ Funcionalidade: Fechar Pedido com método de pagamento custom
 #       | testjeans  | sedex           |
 
   
+  @login_checkout
   Esquema do Cenário: Finalizar pedido com usuário logado
-    Dado que estou na tela de checkout com um produto "fisico" "<store>"
-    E realizar o login
-    E preencher os dados do formulário "<shipping_option>"
-    E selecionar o método de pagamento "custom"
-    Então validar que o pedido foi finalizado com sucesso "<shipping_option>" "<store>"
-    E retornar ao storefront logado
+    Dado que o consumer tenha avançado com um pedido até o checkout com produto "fisico" na loja "<store>"
+    E o consumer efetuar o login no checkout
+    Quando o consumer finalizar um pedido com o meio de entrega "<shipping_option>" e método de pagamento "custom" em loja br
+    Então validar que o pedido foi finalizado com sucesso
+      | shipping_option | <shipping_option> |
+      | store           | <store>           |
+    E validar que o consumer permanece logado no storefront
 
     Exemplos:
       | store     | shipping_option |
       | testjeans | sedex           |
 
-  @testa
+  @cupom
   Esquema do Cenário: Finalizar pedido com cupom de desconto aplicado
-    Dado que estou na tela de checkout com um produto "fisico" "<store>"
-    E aplico o cupom de desconto "NOVA1011"
-    E preencher os dados do formulário "<shipping_option>"
-    E selecionar o método de pagamento "custom"
-    Então validar que o pedido foi finalizado com sucesso "<shipping_option>" "<store>"
+    Dado que o consumer tenha avançado com um pedido até o checkout com produto "fisico" na loja "<store>"
+    E o consumer aplica o cupom de desconto "NOVA1011"
+    Quando o consumer finalizar um pedido com o meio de entrega "<shipping_option>" e método de pagamento "custom" em loja br
+    Então validar que o pedido foi finalizado com sucesso
+      | shipping_option | <shipping_option> |
+      | store           | <store>           |
     E validar que o valor de desconto do cupom foi aplicado com sucesso
 
     Exemplos:

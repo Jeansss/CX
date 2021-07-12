@@ -11,6 +11,7 @@ class CheckoutStart < SitePrism::Page
 
   element :postalCode, "input[id='shippingAddress.zipcode']"
   element :btnNext, 'div[data-testid=btnSubmitZipcode]'
+  elements :shippings, '.shipping-method-item-name'
   elements :shippingOption, '.shipping-options-ship .radio'
   element :pickup, '.shipping-options-pickup'
   elements :pickup_oca, '.shipping-options-pickup .radio'

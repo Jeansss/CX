@@ -1,6 +1,6 @@
 class Home < SitePrism::Page
 
-  # set_url ''
+  set_url ''
 
   element :div_account, '.js-utilities-item > :nth-child(1)'
   element :my_account, '.js-subutility-list > :nth-child(1) a'
