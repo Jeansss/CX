@@ -1,4 +1,21 @@
 stores:
-  br: testjeans.font-test-checkout.nubestaging.com
-  ar: testjeanarr.font-test-checkout.nubestaging.com
-  mx: testjeanmx.font-test-checkout.nubestaging.com
+  br: testjeans.nubestaging.com
+  ar: testjeanarr.nubestaging.com
+  mx: testjeanmx.nubestaging.com
+  qacheckoutmpbr: qacheckoutmpbr.nubestaging.com
+  qacheckoutnpbr: qacheckoutnpbr.nubestaging.com
+
+
+data:
+  br:
+    phone: '1199999999'
+    zipcode: '03171020'
+    document: '19100000000'
+  ar:
+    phone: '549999999'
+    zipcode: '1865'
+    document: '1234567'
+  mx:
+    phone: '1199999999'
+    zipcode: '54360'
+    document: '1234567'

@@ -7,4 +7,5 @@ class CheckoutSuccess < SitePrism::Page
   element :continue, '.headbar a.headbar-continue'
   element :frete, "td[test-id='cart-shipping-cost']"
 
+
 end

@@ -2,4 +2,20 @@ stores:
   br: jeanprdtest.lojavirtualnuvem.com.br
   ar: testjeanarr.mitiendanube.com
   mx: testjeanmx2.mitiendanube.com
+  qacheckoutmpbr: qacheckoutmpbr.lojavirtualnuvem.com.br
+  qacheckoutnpbr: qacheckoutnpbr.lojavirtualnuvem.com.br
 
+
+data:
+  br:
+    phone: '1199999999'
+    zipcode: '03171020'
+    document: '19100000000'
+  ar:
+    phone: '549999999'
+    zipcode: '1865'
+    document: '1234567'
+  mx:
+    phone: '1199999999'
+    zipcode: '54360'
+    document: '1234567'
